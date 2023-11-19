@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %} Популярное {%endblock %} {% block
+content %}
+<div class="container">
+  <h1 class="popular_title">Наиболее популярные вопросы</h1>
+  <div class="popular">
+    {% for item in data %}
+    <p class="popular_question">
+      Вопрос: {{ item['question_text'] }}
+      <span class="end">{{item['count']}}</span>
+    </p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

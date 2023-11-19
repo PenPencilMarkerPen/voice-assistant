@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title %} Авторизация {%endblock %} {% block
+content %}
+<div class="container">
+  <h1 class="edit_title">Авторизация</h1>
+  <form action="" method="post" novalidate class="edit_form">
+    {{ form.hidden_tag() }}
+    <div class="edit_input">
+      {{ form.username.label }} {{ form.username(size=32) }}
+    </div>
+    <div class="edit_input">
+      {{ form.password.label }} {{ form.password(size=32) }}
+    </div>
+    <div class="edit_remember">
+      {{ form.remember_me() }} {{ form.remember_me.label }}
+    </div>
+    <div class="edit_btn">{{ form.submit() }}</div>
+  </form>
+</div>
+{% endblock %}
