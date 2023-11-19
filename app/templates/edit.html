@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %} Форма редактирования {%endblock %}
+{% block content %}
+<div class="container">
+  <h1 class="edit_title">Редактировать вопрос-ответ</h1>
+  <form method="POST" class="edit_form">
+    {{ form.csrf_token }}
+    <div class="edit_input">{{ form.question.label }} {{ form.question }}</div>
+    <br />
+    <div class="edit_input">{{ form.answer.label }} {{ form.answer }}</div>
+    <br />
+    <div class="edit_btn">{{ form.submit() }}</div>
+  </form>
+</div>
+{% endblock %}

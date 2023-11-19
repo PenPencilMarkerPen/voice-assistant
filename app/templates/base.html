@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename = 'reset.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename = 'style.css')}}"
+    />
+  </head>
+  <body>
+    <div class="all">
+      <div class="container_main">{%block content %} {% endblock %}</div>
+      <div class="container_nav">
+        <nav class="navigation">
+          <ul>
+            <li><a href="/admin">Добавление</a></li>
+            <li><a href="/quest">Вопрос-ответ</a></li>
+            <li><a href="/popular">Статистика</a></li>
+            <li><a href="/login">Вход</a></li>
+            <li><a href="/logout">Выход</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %} Добавить вопрос-ответ {%endblock %}
+{% block content %}
+<div class="container">
+  <h1 class="edit_title">Добавить вопрос-ответ</h1>
+  <form method="POST" action="/admin" class="edit_form">
+    {{ form.csrf_token }}
+    <div class="edit_input">{{ form.question.label }} {{ form.question }}</div>
+    <br />
+    <div class="edit_input">{{ form.answer.label }} {{ form.answer }}</div>
+    <br />
+    <div class="edit_btn">{{ form.submit() }}</div>
+  </form>
+</div>
+{% endblock %}

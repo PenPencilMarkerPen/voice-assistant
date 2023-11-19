@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} Вопрос-ответ {%endblock %} {% block
+content %}
+<div class="container">
+  <h1 class="admin_title">Вопросы-ответы</h1>
+  <div class="admin">
+    {% for item in data %}
+    <div class="admin_all">
+      <div class="admin_question">
+        <p>Вопрос: {{ item['question_text'] }}</p>
+        <p>Ответ: {{ item['answer_text'] }}</p>
+      </div>
+      <div class="admin_answer">
+        <a class="edit" href="edit/{{item['question_id']}}">Редактировать</a>
+        <a class="delete" href="delete/{{item['question_id']}}">Удалить</a>
+      </div>
+    </div>
+    <br />
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
